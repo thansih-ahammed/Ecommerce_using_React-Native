@@ -16,7 +16,7 @@ export default function App() {
   const HomeTabs = () => {
     return (
       <Tab.Navigator>
-        <Tab.Screen name='home' component={Home}/>
+        <Tab.Screen name='home' options={{headerShown:false,}} component={Home}/>
         <Tab.Screen name='search' component={Search}/>
         <Tab.Screen name='profile' component={Profile}/>
       </Tab.Navigator>
@@ -29,7 +29,7 @@ export default function App() {
  
     <NavigationContainer>
       <HomeStackNavigator.Navigator>
-        < HomeStackNavigator.Screen name='home' component={HomeTabs}/>
+        < HomeStackNavigator.Screen options={{headerShown:false,}}  name='home' component={HomeTabs}/>
         < HomeStackNavigator.Screen name='cart' component={Cart} />
       </HomeStackNavigator.Navigator>
     </NavigationContainer>
