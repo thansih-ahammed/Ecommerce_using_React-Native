@@ -29,7 +29,7 @@ export default function App() {
  
     <NavigationContainer>
       <HomeStackNavigator.Navigator>
-        < HomeStackNavigator.Screen options={{headerShown:false,}}  name='home' component={HomeTabs}/>
+        < HomeStackNavigator.Screen options={{headerShown:false,}}  name='homes' component={HomeTabs}/>
         < HomeStackNavigator.Screen name='cart' component={Cart} />
       </HomeStackNavigator.Navigator>
     </NavigationContainer>
