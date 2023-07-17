@@ -1,10 +1,33 @@
-import { View, Text ,StyleSheet,TouchableOpacity, TextInput, SafeAreaView} from 'react-native'
+import { View, Text ,StyleSheet,TouchableOpacity, TextInput, ScrollView,SafeAreaView,Image} from 'react-native'
 import React from 'react'
 import BackIcon from "../../assets/icons/Property 1=left b.svg"
 import Profile from '../../assets/icons/Property 1=profile g.svg'
 import SearchIcon from '../../assets/icons/Property 1=search y.svg'
 
 export default function Search({navigation}) {
+
+    const renderImage= [
+      {
+        id:1,
+        iamge:require('../../assets/images/Rectangle 20479.png'),
+        title:'men"s blasers '
+      },
+      {
+        id:2,
+        iamge:require('../../assets/images/pexels-liza-summer-6347546 7.png'),
+        title:'woman"s sweatpants'
+      },
+      {id:3,
+        iamge:require('../../assets/images/Rectangle 20707.png'),
+        title:'kid"s hat'
+      },
+      {id:4,
+        iamge:require('../../assets/images/Rectangle 20714.png'),
+        title:'heels '
+      },
+    ]
+
+
   return (
     <SafeAreaView style={styles.Container}>
     <View style={styles.header}>
@@ -30,6 +53,29 @@ export default function Search({navigation}) {
     <Profile />
       <Text>Select a photo</Text>
     </View>
+  </View>
+  <View>
+    <Text style={styles.SearchText}>Recent Searches</Text>
+    <ScrollView horizontal>
+    {renderImage.map(item => (
+          <TouchableOpacity
+          
+          key={item.id}
+          >
+          
+            {/* <View style={styles.imageContainer}>
+              <Image source={item.iamge} style={styles.image} />
+              
+             
+            </View> */}
+            <View style>
+            <Text style={styles.title}>{item.title}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+     
+
+    </ScrollView>
   </View>
   </SafeAreaView>
   )
@@ -79,7 +125,31 @@ const styles=StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
     paddingVertical:15,
-    paddingHorizontal:20
+    paddingHorizontal:20,
+    marginBottom:10,
+  },
+  imageContainer:{
+    width:"50%",
+    
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: '15%',
+    marginBottom:10,
+
+  },
+  image:{
+
+
+
+  },
+  SearchText:{
+  
+
+  }
+  ,
+  title:{
+    marginRight:20,
+    marginVertical:20
   }
 
 })
