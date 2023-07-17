@@ -6,27 +6,56 @@ import SearchIcon from '../../assets/icons/Property 1=search y.svg'
 
 export default function Search({navigation}) {
 
-    const renderImage= [
+    // const renderImage= [
+    //   {
+    //     id:1,
+    //     iamge:require('../../assets/images/Rectangle 20479.png'),
+    //     title:'men"s blasers '
+    //   },
+    //   {
+    //     id:2,
+    //     iamge:require('../../assets/images/pexels-liza-summer-6347546 7.png'),
+    //     title:'woman"s sweatpants'
+    //   },
+    //   {id:3,
+    //     iamge:require('../../assets/images/Rectangle 20707.png'),
+    //     title:'kid"s hat'
+    //   },
+    //   {id:4,
+    //     iamge:require('../../assets/images/Rectangle 20714.png'),
+    //     title:'heels '
+    //   },
+    // ]
+    const [categories, setCategories] = useState([
       {
-        id:1,
-        iamge:require('../../assets/images/Rectangle 20479.png'),
-        title:'men"s blasers '
+        id: 1,
+        name: 'electronics',
       },
       {
-        id:2,
-        iamge:require('../../assets/images/pexels-liza-summer-6347546 7.png'),
-        title:'woman"s sweatpants'
+        id: 2,
+        name: 'sports',
       },
-      {id:3,
-        iamge:require('../../assets/images/Rectangle 20707.png'),
-        title:'kid"s hat'
+      {
+        id: 3,
+        name: 'fashion',
       },
-      {id:4,
-        iamge:require('../../assets/images/Rectangle 20714.png'),
-        title:'heels '
+      {
+        id: 4,
+        name: 'beuty',
       },
-    ]
+      {
+        id: 5,
+        name: 'electronics',
+      },
+    ]);
 
+    const renderCategories = () => {
+      return categories.map((category) => (
+        <TouchableOpacity key={category.id} style={styles.categoryCard}>
+          <Text style={styles.categoryText}>{category.name}</Text>
+        </TouchableOpacity>
+      ));
+    };
 
   return (
     <SafeAreaView style={styles.Container}>
@@ -56,26 +85,17 @@ export default function Search({navigation}) {
   </View>
   <View>
     <Text style={styles.SearchText}>Recent Searches</Text>
-    <ScrollView horizontal>
-    {renderImage.map(item => (
-          <TouchableOpacity
-          
-          key={item.id}
-          >
-          
-            {/* <View style={styles.imageContainer}>
-              <Image source={item.iamge} style={styles.image} />
-              
-             
-            </View> */}
-            <View style>
-            <Text style={styles.title}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        ))}
+    
+    <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.categories}
+      >
+        {renderCategories()}
+      </ScrollView>
      
 
-    </ScrollView>
+    
   </View>
   </SafeAreaView>
   )
@@ -111,6 +131,11 @@ const styles=StyleSheet.create({
   HeadingContainer:{
    marginVertical:20
 
+  },
+  categories: {
+    paddingLeft: 24,
+    marginTop: 40,
+    paddingBottom: 25,
   },
   Heading:{
     fontSize:18
