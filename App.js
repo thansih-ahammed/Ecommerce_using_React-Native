@@ -17,8 +17,8 @@ export default function App() {
     return (
       <Tab.Navigator>
         <Tab.Screen name='home' options={{headerShown:false,}} component={Home}/>
-        <Tab.Screen name='search' component={Search}/>
-        <Tab.Screen name='profile' component={Profile}/>
+        <Tab.Screen name='search' options={{headerShown:false,}} component={Search}/>
+        <Tab.Screen name='profile' options={{headerShown:false,}} component={Profile}/>
       </Tab.Navigator>
     );
   }
