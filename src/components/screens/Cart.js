@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
-import BackIcon from "../../assets/icons/Property 1=left b.svg";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
+import BackIcon from '../../assets/icons/Property 1=left b.svg';
 import MenuIcon from '../../assets/icons/Property 1=adjust g.svg';
 import CalendarIcon from '../../assets/icons/calendar.svg';
 import ProductCard from '../includes/ProductCard';
@@ -9,24 +18,24 @@ export default function Cart({ navigation }) {
   const [categories, setCategories] = useState([
     {
       id: 1,
-      name: 'electronics'
+      name: 'electronics',
     },
     {
       id: 2,
-      name: 'sports'
+      name: 'sports',
     },
     {
       id: 3,
-      name: 'fashion'
+      name: 'fashion',
     },
     {
       id: 4,
-      name: 'beauty'
+      name: 'beuty',
     },
     {
       id: 5,
-      name: 'electronics'
-    }
+      name: 'electronics',
+    },
   ]);
 
   const [products, setProducts] = useState([
@@ -65,46 +74,55 @@ export default function Cart({ navigation }) {
       sold_count: 0,
       real_price: 100,
       offer_price: 50,
-    }
+    },
   ]);
 
-  const renderCategories = () => (
-    categories.map(category => (
+  const renderCategories = () => {
+    return categories.map((category) => (
       <TouchableOpacity key={category.id} style={styles.categoryCard}>
         <Text style={styles.categoryText}>{category.name}</Text>
       </TouchableOpacity>
-    ))
-  );
+    ));
+  };
 
-  const renderProducts = () => (
-    products.map(product => (
+  const renderProducts = () => {
+    return products.map((product) => (
       <ProductCard key={product.id} product={product} />
-    ))
-  );
+    ));
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <BackIcon width={20} height={27} />
         </TouchableOpacity>
-        <Text style={styles.headerText}>Flash Sale</Text>
+        <Text style={styles.headertext}>Flash Sale</Text>
         <TouchableOpacity>
           <MenuIcon width={27} height={20} />
         </TouchableOpacity>
       </View>
-      <View style={styles.spolight}>
-        <Text style={styles.spolightText}>New Arrivals</Text>
+      <View style={styles.spotlight}>
+        <Text style={styles.spotlightTitle}>New Arrivals</Text>
         <Text style={styles.bottomText}>Sale up to 60% off</Text>
         <View style={styles.dateButton}>
           <CalendarIcon height={22} />
           <Text style={styles.dateText}>25-30 June</Text>
         </View>
-        <Image style={styles.spolightImage} source={require('../../assets/images/Frame 3466075.jpg')} />
+        <Image
+          style={styles.spotlightImage}
+          source={require('../../assets/images/Frame 3466075.jpg')}
+        />
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categories}>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.categories}
+      >
         {renderCategories()}
       </ScrollView>
+
       <ScrollView contentContainerStyle={styles.productList}>
         {renderProducts()}
       </ScrollView>
@@ -113,20 +131,17 @@ export default function Cart({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
     paddingTop: 17,
   },
-  headerText: {
+  headertext: {
     fontWeight: '600',
     fontSize: 20,
   },
-  spolight: {
+  spotlight: {
     marginTop: 20,
     paddingHorizontal: 20,
     backgroundColor: '#FBE8E7',
@@ -134,7 +149,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignSelf: 'center',
   },
-  spolightText: {
+  spotlightTitle: {
     fontSize: 24,
     fontWeight: '500',
     marginBottom: 7,
@@ -142,7 +157,7 @@ const styles = StyleSheet.create({
   bottomText: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#eba352',
+    color: '#EBA352',
   },
   dateButton: {
     flexDirection: 'row',
@@ -153,15 +168,13 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     marginTop: 13,
   },
-  spolightImage: {
+  dateText: {},
+  spotlightImage: {
     width: '54%',
     aspectRatio: 570 / 508,
     position: 'absolute',
     right: 15,
     top: 10,
-  },
-  dateText: {
-
   },
   categories: {
     paddingLeft: 24,
