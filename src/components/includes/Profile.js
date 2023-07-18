@@ -1,27 +1,37 @@
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import React, {cloneElement} from 'react';
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+
 import BackIcon from '../../assets/icons/Property 1=left b.svg';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function Profile() {
   return (
     <SafeAreaView>
-      <View style={styles.Container}>
+      <View style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity>
-            <BackIcon width="25px" height="27px" />
+            <BackIcon width={25} height={27} />
           </TouchableOpacity>
-          <Text style={styles.Title}>Account</Text>
+          <Text style={styles.title}>Account</Text>
         </View>
       </View>
-      <View style={styles.ProfileContainer}>
-        <View style={styles.Profile}>
-          <Text style={styles.ProfileText}>A</Text>
+      <View style={styles.profileContainer}>
+        <View style={styles.profile}>
+          <Text style={styles.profileText}>A</Text>
         </View>
         <View>
-          <Text style={styles.Name}>Aysha</Text>
-          <Text style={styles.Email}>aysh@gmail.com</Text>
-          <Text style={styles.Number}>735645278</Text>
+          <Text style={styles.name}>Aysha</Text>
+          <Text style={styles.email}>aysh@gmail.com</Text>
+          <Text style={styles.number}>735645278</Text>
+        </View>
+      </View>
+      <View style={styles.cartSettings}>
+        <View>
+          <Text>Orders</Text>
+        </View>
+        <View>
+
         </View>
       </View>
     </SafeAreaView>
@@ -29,57 +39,67 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
-  Container: {
+  container: {
     paddingHorizontal: 24,
     paddingTop: 17,
   },
   header: {
     flexDirection: 'row',
-
     paddingTop: 20,
-    alignContent: 'center',
     alignItems: 'center',
   },
-  Title: {
+  title: {
     marginLeft: 20,
     fontSize: 22,
   },
-  ProfileContainer: {
+  profileContainer: {
     width: '100%',
     paddingVertical: 10,
-
     flexDirection: 'row',
     alignItems: 'center',
     borderTopWidth: 1,
     marginVertical: 20,
     borderBottomWidth: 1,
   },
-  Profile: {
+  profile: {
     width: 100,
     height: 100,
     borderRadius: 50,
     backgroundColor: 'black',
     marginRight: 20,
     marginLeft: 20,
-    // padding:30,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  ProfileText: {
+  profileText: {
     fontSize: 60,
     color: 'white',
     fontWeight: '600',
   },
-  Name: {
+  name: {
     marginVertical: 5,
-    color: 'A6A6A6',
+    color: '#A6A6A6',
   },
-  Email: {
+  email: {
     marginBottom: 5,
-    color: 'A6A6A6',
+    color: '#A6A6A6',
   },
-  Number: {
-    color: 'A6A6A6',
+  number: {
+    color: '#A6A6A6',
   },
+  cartSettings: {
+    width: '100%',
+    paddingVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderTopWidth: 1,
+    marginVertical: 20,
+    borderBottomWidth: 1,
+    justifyContent: 'space-between',
+  },
+  Arrow:{
+    width:100,
+    height:100,
+  }
 });
