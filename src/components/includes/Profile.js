@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Arrow from "../../assets/icons/arrowsvg.svg"
 
 
 import BackIcon from '../../assets/icons/Property 1=left b.svg';
@@ -26,14 +27,85 @@ export default function Profile() {
           <Text style={styles.number}>735645278</Text>
         </View>
       </View>
-      <View style={styles.cartSettings}>
+
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
         <View>
           <Text>Orders</Text>
         </View>
         <View>
-
+          <Arrow/>
         </View>
+        </TouchableOpacity>
       </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>Customer Care</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>Coupon Quest</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>Saved Cards</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>My Rewards</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>Address</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+      <View >
+        <TouchableOpacity  style={styles.cartSettings}>
+
+        <View>
+          <Text>Notification</Text>
+        </View>
+        <View>
+          <Arrow/>
+        </View>
+        </TouchableOpacity>
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -60,6 +132,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     marginVertical: 20,
     borderBottomWidth: 1,
+    backgroundColor:"#A6A6A6"
   },
   profile: {
     width: 100,
@@ -79,24 +152,25 @@ const styles = StyleSheet.create({
   },
   name: {
     marginVertical: 5,
-    color: '#A6A6A6',
+    color: 'black',
   },
   email: {
     marginBottom: 5,
-    color: '#A6A6A6',
+    color: 'black',
   },
   number: {
-    color: '#A6A6A6',
+    color: 'black',
   },
   cartSettings: {
     width: '100%',
-    paddingVertical: 10,
+
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 1,
-    marginVertical: 20,
+    marginBottom:20,
+    paddingBottom:20,
     borderBottomWidth: 1,
     justifyContent: 'space-between',
+    paddingHorizontal: 24,
   },
   Arrow:{
     width:100,
