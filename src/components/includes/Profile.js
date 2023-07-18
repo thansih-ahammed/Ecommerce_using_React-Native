@@ -1,5 +1,5 @@
 import { View, Text,TouchableOpacity ,StyleSheet} from 'react-native'
-import React from 'react'
+import React, { cloneElement } from 'react'
 import BackIcon from "../../assets/icons/Property 1=left b.svg"
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -18,10 +18,10 @@ export default function Profile() {
     </View>
     <View style={styles.ProfileContainer}>
       <View style={styles.Profile}>
-   
+   <Text style={styles.ProfileText}>A</Text>
       </View>
       <View>
-      <Text>Aysha</Text>
+      <Text style={styles.Name}>Aysha</Text>
       <Text>aysh@gmail.com</Text>
      <Text>735645278</Text>
       </View>
@@ -49,15 +49,36 @@ const styles=StyleSheet.create({
   },
   ProfileContainer:{
     width:"100%",
-    backgroundColor:'A6A6A6',
+    paddingVertical:10,
+    
     flexDirection:'row',
-    justifyContent:'space-between'
+    alignItems:'center',
+    borderTopWidth:1,
+    marginVertical:20,
+    borderBottomWidth:1,
+
+
+    
   },
   Profile:{
-    width:100,
-    height:100,
-    borderRadius:"50%",
-    borderWidth:1,
-    borderColor: 'black',
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: 'black',
+    marginRight:20,
+    marginLeft:20,
+    // padding:30,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  ProfileText:{
+    fontSize:60,
+    color:"white",
+    fontWeight:"600"
+  },
+  Name:{
+
   }
+
 })
