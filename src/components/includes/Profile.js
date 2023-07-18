@@ -16,6 +16,16 @@ export default function Profile() {
     </Text>
     </View>
     </View>
+    <View style={styles.ProfileContainer}>
+      <View style={styles.Profile}>
+   
+      </View>
+      <View>
+      <Text>Aysha</Text>
+      <Text>aysh@gmail.com</Text>
+     <Text>735645278</Text>
+      </View>
+    </View>
     </SafeAreaView>
   )
 }
@@ -36,5 +46,18 @@ const styles=StyleSheet.create({
   Title:{
     marginLeft:20,
     fontSize:22,
+  },
+  ProfileContainer:{
+    width:"100%",
+    backgroundColor:'A6A6A6',
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+  Profile:{
+    width:100,
+    height:100,
+    borderRadius:"50%",
+    borderWidth:1,
+    borderColor: 'black',
   }
 })
